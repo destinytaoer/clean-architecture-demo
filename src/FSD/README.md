@@ -1,5 +1,7 @@
 ## FSD 结构设计
 
+feature slice design
+
 参考文档:
 
 - [FSD](https://feature-sliced.design/)
