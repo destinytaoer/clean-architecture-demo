@@ -15,3 +15,20 @@ export default function useToken<T>(
 ) {
   return createContext(initialValue as T);
 }
+
+import { useState } from 'react';
+import useToken from './useToken';
+
+export const AppService = useToken(useAppService);
+
+export default function useAppService() {
+  // 可注入其他服务，以嵌套
+  // eq:
+  // const someOtherService = useSomeOtherService(SomeOtherService)
+  const [appName, setAppName] = useState('appName');
+  return {
+    appName,
+    setAppName,
+    // ...
+  };
+}
